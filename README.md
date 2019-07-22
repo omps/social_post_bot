@@ -9,13 +9,17 @@ Written in Python 3.6.7 🐍
 ## Table of contents
 
 * [Requirements](https://github.com/rocketmovingapp/abbie_social_post_bot#requirements)
+* [Requirements](https://github.com/rocketmovingapp/abbie_social_post_bot#requirements)
 
 ---
 
 ## [Requirements](#requirements)
 
-*Virtual Environment* (Optional)
- 
+<strong>Virtual Environment</strong> (Optional)
+ ```bash
+python3 -m venv venv
+ ```
+
 ---
 
 ## Contributors
