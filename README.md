@@ -6,6 +6,19 @@ Written in Python 3.6.8 🐍
 
 ---
 
+## Sprints
+
+* #01 - bot_instagram
+from bot_instagram import post_instagram
+
+* #03 - bot_telegram
+from bot_telegram import notify_admin
+
+* #04 - bot_pixabay
+from bot_pixabay import get_image_from_pixabay
+
+---
+
 ## Table of contents
 
 1. [Requirements](https://github.com/rocketmovingapp/abbie_social_post_bot#requirements)
