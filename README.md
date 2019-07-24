@@ -1,18 +1,21 @@
 # A.B.B.I.E. Social Media Posting Bot
 
-A bot that handles posting on different social media platforms.
+**A bot that extracts content from Google Sheets and posts on different social media platforms.**
 
 Written in Python 3.6.8 🐍
+
+Running on Ubuntu 18.04
 
 ---
 
 ## Sprints
 
-* #03 - bot_telegram
+* #01 - bot_telegram
 from bot_telegram import notify_admin
 
-* #04 - bot_pixabay
-from bot_pixabay import get_image_from_pixabay
+* #02 - Facebook integration
+
+* #03 - Pinterest integration
 
 ---
 
@@ -31,12 +34,12 @@ from bot_pixabay import get_image_from_pixabay
 python3 -m venv venv
  ```
 
-* <strong>Requests</strong>
+* <strong>Install Requests</strong>
  ```bash
 sudo pip3 install requests
  ```
 
-* <strong>Google </strong>
+* <strong>Install Google Client Library</strong>: Install the [Google Client Library](https://developers.google.com/sheets/api). A Google Cloud Console account will be required to access 
  ```bash
 sudo pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
  ```

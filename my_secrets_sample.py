@@ -18,3 +18,5 @@ post_size_guide = {
 ig_username = "" # TODO Enter the Instagram username
 ig_password = "" # TODO Enter the Instagram password
 
+# Pixabay API key
+pixabay_api_key = "" # TODO Enter the Pixabay API Key
