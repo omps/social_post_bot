@@ -8,9 +8,6 @@ Written in Python 3.6.8 🐍
 
 ## Sprints
 
-* #01 - bot_instagram
-from bot_instagram import post_instagram
-
 * #03 - bot_telegram
 from bot_telegram import notify_admin
 
@@ -41,8 +38,13 @@ sudo pip3 install requests
 
 * <strong>Google </strong>
  ```bash
-sudo pip3 install -
+sudo pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
  ```
+
+ * <strong>Instapy-CLI</strong>
+```bash
+sudo pip3 install instapy-cli
+```
 
 ---
 
