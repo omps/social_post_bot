@@ -13,3 +13,8 @@ post_size_guide = {
    'twitter_post': (1024, 512),
    'pinterest_post': (735, 1102),
 }   
+
+# Instagram Credentials
+ig_username = "" # TODO Enter the Instagram username
+ig_password = "" # TODO Enter the Instagram password
+
