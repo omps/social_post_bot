@@ -18,7 +18,7 @@ def post_instagram(image_prefix, post_details):
     file_list = os.listdir(image_file_path)
     # Get the image to post
     for i in file_list:
-        if i.startswith(image_prefix+post_image_id)
+        if i.startswith(image_prefix+post_image_id):
             # Go to the directory
             os.chdir(image_file_path)
             post_image = i
