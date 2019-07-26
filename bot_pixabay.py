@@ -8,14 +8,14 @@ import re
 import requests
 
 
-def get_image_from_pixabay(image_id, sm_account):
+def getImageFromPixabay(image_id, sm_account):
     """Function to get image from Pixabay."""
     # Define the base url
     URL = f"https://pixabay.com/api/?key={API_KEY}&id={image_id}"
     # Move to directory
     os.chdir("/home/bot/projects/abbie_social_post_bot/images")
 
-    def get_pixabay_url(url, image_id):
+    def getPixabayURL(url, image_id):
         """Function to get the formatted url."""
         response = requests.get(url)
         content = response.content.decode("utf8")
@@ -23,7 +23,7 @@ def get_image_from_pixabay(image_id, sm_account):
         print("Completed Pixabay API call.")
         return js
 
-    def get_pixabay_large_image(js, image_id):
+    def getPixabayLargeImage(js, image_id):
         """Function to get the image from the url."""
         # Get the hit
         hit = js.get("hits")[0]
@@ -35,7 +35,7 @@ def get_image_from_pixabay(image_id, sm_account):
 
         return hit_id, hit_link
 
-    def save_image(hit_id, hit_link):
+    def saveImage(hit_id, hit_link):
         """Get the image from the url."""
         image = requests.get(hit_link)
         #  Print the status code
@@ -50,8 +50,8 @@ def get_image_from_pixabay(image_id, sm_account):
             
 
     # Get the json from the API
-    js = get_pixabay_url(url=URL, image_id=image_id)
+    js = getPixabayURL(url=URL, image_id=image_id)
     # Get the image details
-    hit_id, hit_link = get_pixabay_large_image(js=js, image_id=image_id)
+    hit_id, hit_link = getPixabayLargeImage(js=js, image_id=image_id)
     # Get the image
-    image_content = save_image(hit_id=hit_id, hit_link=hit_link)
+    image_content = saveImage(hit_id=hit_id, hit_link=hit_link)

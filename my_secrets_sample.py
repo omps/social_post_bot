@@ -24,3 +24,9 @@ pixabay_api_key = "" # TODO Enter the Pixabay API Key
 # Telegram credentials
 telegram_token = "" # TODO insert Telegram token
 chat_id = "" # TODO insert Telegram Chat ID
+
+# Twitter Credentials
+consumer_key = "" # TODO insert Twitter Consumer Key
+consumer_secret = "" # TODO insert Twitter Consumer Secret
+access_token = "" # TODO insert Twitter Access Token
+access_secret = "" # TODO insert Twitter Access Secret

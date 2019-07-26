@@ -7,19 +7,19 @@ import json
 import requests
 
 # Notify administrators
-def notify_admin(admin_notify_token, admin_msg, chat_id):
+def notifyAdmin(admin_notify_token, admin_msg, chat_id):
     """Function to advise admin when ABBIE is working."""
-    def get_telegram_url(url):
+    def getTelegramURL(url):
         """Get the formatted url."""
         response = requests.get(url)
         content = response.content.decode("utf8")
         return content
 
-    def send_telegram_message(admin_msg, a_chat):
+    def sendTelegramMessage(admin_msg, a_chat):
         """Send the message."""
         # Compile the Telegram send message url
         send_url = URL + "sendMessage?text={}&chat_id={}".format(admin_msg, a_chat)
-        get_telegram_url(send_url)
+        getTelegramURL(send_url)
 
 
     # Update admin via Telegram
@@ -29,4 +29,4 @@ def notify_admin(admin_notify_token, admin_msg, chat_id):
     print(the_admin_msg)
 
     # Send the message
-    send_telegram_message(admin_msg=the_admin_msg, a_chat=chat_id)
+    sendTelegramMessage(admin_msg=the_admin_msg, a_chat=chat_id)

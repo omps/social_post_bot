@@ -13,11 +13,12 @@ from bot_hashtags import add_hashtags
 from bot_images import deletePostedImage
 from bot_images import saveImageToFolder
 from bot_images import resizeImageForSocialMedia
-from bot_instagram import postInstagram
 from bot_sheets import buildService
 from bot_sheets import getPostDetails
 from bot_sheets import updateSheetsLog
 from bot_telegram import notifyAdmin
+from bot_twitter import authorizeTwitter
+from bot_twitter import postTwitter
 from time import sleep
 
 # Credentials for Google Sheets
@@ -37,7 +38,7 @@ def abbie():
     sleep(1)
 
     # Set the version
-    sm_version = "ig"
+    sm_version = "tw"
 
     # Get a service for Google Sheets
     sheet, service = buildService()
@@ -55,9 +56,10 @@ def abbie():
 
     sleep(1)
 
-    # Post to Instagram
-    preview_link = postInstagram(image_prefix=resize_prefix, post_details=post_details)
-
+    # Post to Twitter
+    api = authorizeTwitter()
+    preview_link = postTwitter(api, image_prefix=resize_prefix, post_details=post_details)
+    
     # Delete resized image from folder
     deletePostedImage(image_prefix=resize_prefix, image_id=image_id)
 
@@ -67,7 +69,7 @@ def abbie():
     updateSheetsLog(sheet=sheet, service=service, update_image_id=image_id, sm_account=sm_version)
 
     # Notify administrators
-    msg = f"Hello team,\nI have posted on Instagram:\n\n{preview_link}"
+    msg = f"Hello team,\nI have posted on Twitter:\n\n{preview_link}"
     notifyAdmin(admin_notify_token=telegram_token, admin_msg=msg, chat_id=chat_id)
 
 if __name__ == ("__main__"):

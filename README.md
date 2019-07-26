@@ -77,6 +77,15 @@ python3 ig_main.py
 This module posts references content in Google Sheets, posts the content on Instagram, and sends the administrator a link to the post, via Telegram. 
 *Edit the filepaths in the code to match those of your machine/config.*
 
+
+**Instagram modules**
+
+```bash
+python3 tw_main.py
+```
+This module posts references content in Google Sheets, posts the content on Twitter, and sends the administrator a link to the post, via Telegram. 
+*Edit the filepaths in the code to match those of your machine/config.*
+
 ---
 
 ## [Contributors](#contributors)

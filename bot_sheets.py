@@ -17,7 +17,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SPREADSHEET_ID = gspread_id
 FULL_RANGE_NAME = 'Main!A4:N'
 
-def build_service():
+def buildService():
     """
     Builds an API service with Google Sheets. 
     Returns a sheet connection and a service.
@@ -45,7 +45,7 @@ def build_service():
     return sheet, service
 
 
-def get_post_details(sheet, sm_account):
+def getPostDetails(sheet, sm_account):
     """Get next available post content for social media."""
     # Get the result
     result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=FULL_RANGE_NAME).execute()
@@ -101,7 +101,7 @@ def get_post_details(sheet, sm_account):
         return row_number, image_id, post_details
 
 
-def update_sheets_log(sheet, service, update_image_id, sm_account):
+def updateSheetsLog(sheet, service, update_image_id, sm_account):
     """Update Google Sheets after content has been posted."""
     # Define the columns related to each social media account
     sheets_social_media_columns = {

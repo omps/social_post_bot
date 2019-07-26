@@ -6,7 +6,7 @@ from my_secrets import ig_username
 
 import os
 
-def post_instagram(image_prefix, post_details):
+def postInstagram(image_prefix, post_details):
     """Function to post to Instagram."""
     post_image_id = post_details["image_id"]+".jpg"
     post_message = post_details["text"]

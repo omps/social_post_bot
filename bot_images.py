@@ -1,13 +1,13 @@
 """Module to interact with PIL and handle images."""
 
-from bot_pixabay import get_image_from_pixabay
+from bot_pixabay import getImageFromPixabay
 from my_secrets import post_size_guide
 from PIL import Image
 
 import os
 
 
-def save_image_to_folder(image_id, sm_account, post_details):
+def saveImageToFolder(image_id, sm_account, post_details):
     """Gets the image from source provider and saves to local folder."""
 
     # Get the image base
@@ -15,7 +15,7 @@ def save_image_to_folder(image_id, sm_account, post_details):
 
     # Get the module depending on image source
     if "pixabay.com/photos/" in image_base_word:
-        get_image_from_pixabay(image_id=image_id, sm_account=sm_account)
+        getImageFromPixabay(image_id=image_id, sm_account=sm_account)
     elif "istockphoto.com/photo/" in image_base_word:
         # Pass for now
         pass
@@ -24,7 +24,7 @@ def save_image_to_folder(image_id, sm_account, post_details):
         pass
 
 
-def resize_image_for_social_media(image_id, sm_account):
+def resizeImageForSocialMedia(image_id, sm_account):
     """Resizes the original image to variations for social media."""
     # Define the size
     if sm_account == "fb":
@@ -80,7 +80,7 @@ def resize_image_for_social_media(image_id, sm_account):
     return resize_prefix
 
 
-def delete_posted_image(image_prefix, image_id):
+def deletePostedImage(image_prefix, image_id):
     """Deletes the resized image after it has been posted."""
     # Define the filepath
     image_file_path = r"/home/bot/projects/abbie_social_post_bot/images"

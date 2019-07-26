@@ -4,6 +4,8 @@ venv
 .vscode
 client_secret.json
 images
+tweepy_response.py
+token.pickle
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
