@@ -78,7 +78,7 @@ This module posts references content in Google Sheets, posts the content on Inst
 *Edit the filepaths in the code to match those of your machine/config.*
 
 
-**Instagram modules**
+**Twitter modules**
 
 ```bash
 python3 tw_main.py
