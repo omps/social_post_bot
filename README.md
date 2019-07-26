@@ -85,6 +85,7 @@ Eduardo: IG [@_eduardo_py](https://www.instagram.com/_eduardo_py)
 Lucas: IG [@lucas09](https://www.instagram.com/lucas039)
 
 Tell us what you think! [@rocketmovingapp](https://www.instagram.com/rocketmovingapp)
+*Made for: [Rocket Moving](https://www.rocketmoving.app)*
 
 ---
 
