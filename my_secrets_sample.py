@@ -20,3 +20,7 @@ ig_password = "" # TODO Enter the Instagram password
 
 # Pixabay API key
 pixabay_api_key = "" # TODO Enter the Pixabay API Key
+
+# Telegram credentials
+telegram_token = "" # TODO insert Telegram token
+chat_id = "" # TODO insert Telegram Chat ID

@@ -5,7 +5,7 @@ import pickle
 import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import requests
+from google.auth.transport.requests import Request
 
 from bot_geocode import get_location_coordinates
 from bot_hashtags import add_hashtags
@@ -24,8 +24,8 @@ def build_service():
     """
     creds = None
     # Delete token.pickle if changing authorization/scope
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists("token.pickle"):
+        with open("token.pickle", "rb") as token:
             creds = pickle.load(token)
     # If no valid credentials exist, allow the user to log in.
     if not creds or not creds.valid:
@@ -33,14 +33,14 @@ def build_service():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'client_secret.json', SCOPES)
+                '/home/bot/projects/abbie_social_post_bot/client_secret.json', SCOPES)
             creds = flow.run_local_server()
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
 
     service = build('sheets', 'v4', credentials=creds)
-    sheets = service.spreadsheets()
+    sheet = service.spreadsheets()
     print('Completed "build_service" function')
     return sheet, service
 
@@ -118,14 +118,14 @@ def update_sheets_log(sheet, service, update_image_id, sm_account):
 
     # If no data found
     if not values:
-        print("No data data found
+        print("No data data found")
     # If data found
     else:
         for idx, row in enumerate(values):
             target_row = idx+4
             check_image_id = row[0]
             if str(update_image_id) == str(check_image_id):
-                UPATED_RANGE_NAME = f"Main!{sheets_social_media_columns[sm_account][0]+str(target_row)}:{sheets_social_media_columns[sm_account][1]+str(target_row)}"
+                UPDATE_RANGE_NAME = f"Main!{sheets_social_media_columns[sm_account][0]+str(target_row)}:{sheets_social_media_columns[sm_account][1]+str(target_row)}"
                 Body = {
                     "majorDimension": "ROWS",
                     "values": [

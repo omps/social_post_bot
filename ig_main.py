@@ -17,7 +17,7 @@ from bot_instagram import post_instagram
 from bot_telegram import notify_admin
 from bot_sheets import build_service
 from bot_sheets import get_post_details
-from bot_sheets import updated_sheets_log
+from bot_sheets import update_sheets_log
 from time import sleep
 
 # Credentials for Google Sheets
@@ -32,8 +32,8 @@ import random
 
 def abbie():
     """Main function to control A.B.B.I.E."""
-    os.system('cls')
-    print('Welcome to A.B.B.I.E.')
+    os.system("clear")
+    print("Welcome to A.B.B.I.E.")
     sleep(1)
 
     # Set the version
@@ -46,12 +46,12 @@ def abbie():
     row_number, image_id, post_details = get_post_details(sheet=sheet, sm_account=sm_version)
 
     sleep(1)
-    os.system("cls")
+    #os.system("clear")
 
     # Save the image
     save_image_to_folder(image_id=image_id, sm_account=sm_version, post_details=post_details)
     # Resize the image
-    resize_prefix = resize_image_for_social_media(image_id=image_id, sm_version=sm_version)
+    resize_prefix = resize_image_for_social_media(image_id=image_id, sm_account=sm_version)
 
     sleep(1)
 
@@ -64,7 +64,7 @@ def abbie():
     sleep(1)
 
     # Update Google Sheets
-    updated_sheets_log(sheet=sheet, service=service, update_image_id=image_id, sm_account=sm_version)
+    update_sheets_log(sheet=sheet, service=service, update_image_id=image_id, sm_account=sm_version)
 
     # Notify administrators
     msg = f"Hello team,\nI have posted on Instagram:\n\n{preview_link}"

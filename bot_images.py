@@ -37,10 +37,10 @@ def resize_image_for_social_media(image_id, sm_account):
         resize_px = post_size_guide["pinterest_post"]
 
     # Define the image prefix
-    image_prefix = sm_account + "_img_original_"
+    image_prefix = sm_account + "-img-original-"
 
     # Define the resized image prefix
-    resize_prefix = "resized_" + sm_account + "_"
+    resize_prefix = "resized-" + sm_account + "-"
 
     print(f"Resizing picture for {sm_account.upper()} to {resize_px} pixels.")
     # Define the filepath
@@ -56,7 +56,7 @@ def resize_image_for_social_media(image_id, sm_account):
             print(f"Found the image")
 
             # Create a new filename
-            new_image_filename = "resized_"+sm_account+"_"+image_id
+            new_image_filename = "resized-"+sm_account+"-"+image_id
             # Resize the image
             with Image.open(i) as new_image:
                 new_image.thumbnail(resize_px)
