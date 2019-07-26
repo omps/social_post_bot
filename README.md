@@ -19,8 +19,9 @@ Running on Ubuntu 18.04
 ## Table of contents
 
 1. [Requirements](https://github.com/rocketmovingapp/abbie_social_post_bot#requirements)
-2. [Contributors](https://github.com/rocketmovingapp/abbie_social_post_bot#contributors)
-3. [Disclaimer](https://github.com/rocketmovingapp/abbie_social_post_bot#disclaimer)
+2. [Quickstart](https://github.com/rocketmovingapp/abbie_social_post_bot#quickstart)
+3. [Contributors](https://github.com/rocketmovingapp/abbie_social_post_bot#contributors)
+4. [Disclaimer](https://github.com/rocketmovingapp/abbie_social_post_bot#disclaimer)
 
 ---
 
@@ -31,12 +32,12 @@ Running on Ubuntu 18.04
 python3 -m venv venv
  ```
 
-* <strong>Install Requests</strong>
+* <strong>Requests</strong>: Install the requests library.
  ```bash
 sudo pip3 install requests
  ```
 
-* <strong>Install Google Client Library</strong>: Install the [Google Client Library](https://developers.google.com/sheets/api). A Google Cloud Console account will be required to access Google's APIs. Add the 'client_secrets.json' file to the main directory.
+* <strong>Google Client Library</strong>: Install the [Google Client Library](https://developers.google.com/sheets/api). A Google Cloud Console account will be required to access Google's APIs. Add the 'client_secrets.json' file to the main directory.
  ```bash
 sudo pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
  ```
@@ -58,6 +59,23 @@ sudo pip3 install instapy-cli
 ```
 
 * <strong>Telegrm Bot</strong>: Create an account with [Telegram](https://telegram.org/) and use [BotFather](https://telegram.me/botfather) to create the Telegram bot framework.
+
+* <strong>Tweepy</strong>: Install the [Tweepy](https://www.tweepy.org) library.
+```bash
+sudo pip install tweepy
+```
+
+---
+
+## [Quickstart](#quickstart)
+
+**Instagram modules**
+
+```bash
+python3 ig_main.py
+```
+This module posts references content in Google Sheets, posts the content on Instagram, and sends the administrator a link to the post, via Telegram. 
+*Edit the filepaths in the code to match those of your machine/config.*
 
 ---
 
