@@ -30,3 +30,14 @@ consumer_key = "" # TODO insert Twitter Consumer Key
 consumer_secret = "" # TODO insert Twitter Consumer Secret
 access_token = "" # TODO insert Twitter Access Token
 access_secret = "" # TODO insert Twitter Access Secret
+
+# Facebook Credentials
+app_id = "" # TODO Enter Facebook App ID
+app_secret = "" # TODO Enter Facebook App Secret
+user_short_token = "" # TODO Enter Facebook User Short Token
+user_long_token = "" # TODO Enter Facebook User Long Token
+page_id = "" # TODO Enter Facebook Page ID
+parent_object = "" # TODO Enter Facebook Parent Object
+permanent_key = "" # TODO Enter Facebook Permanent Key
+permanent_token = "" # TODO Enter Facebook Permanent Token
+long_token = "" # TODO Enter Facebook Long Token

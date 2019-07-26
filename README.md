@@ -50,7 +50,7 @@ sudo pip3 install --upgrade google-api-python-client google-auth-httplib2 google
 
 * <strong>Pillow</strong>: Install the [Pillow](https://www.pillow.readthedocs.io/en/stable) library.
 ```bash
-pip install Pillow
+pip3 install Pillow
 ```
 
 * <strong>Instapy-CLI</strong>: Install the [Instapy-CLI](https://github.com/instagrambot/instapy-cli) library.
@@ -62,7 +62,12 @@ sudo pip3 install instapy-cli
 
 * <strong>Tweepy</strong>: Install the [Tweepy](https://www.tweepy.org) library.
 ```bash
-sudo pip install tweepy
+sudo pip3 install tweepy
+```
+
+* <strong>Facebook-SDK</strong>: Install the [Facebook-SDK](https://developers.facebook.com/docs/graph-api) library.
+```bash
+sudo pip3 install facebook-sdk
 ```
 
 ---
