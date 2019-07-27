@@ -23,7 +23,7 @@ def authorizeTwitter():
 
 def postTwitter(api, image_prefix, post_details):
     """Post the contents to Twitter."""
-    image_file_path = r"/home/bot/projects/abbie_social_post_bot/images"
+    image_file_path = r"/home/bot/projects/social_post_bot/images"
     
     # Get all files
     file_list = os.listdir(image_file_path)
@@ -35,7 +35,7 @@ def postTwitter(api, image_prefix, post_details):
             os.chdir(image_file_path)
             tweet_image = i
             break
-        os.chdir(r"/home/bot/projects/abbie_social_post_bot/")
+        os.chdir(r"/home/bot/projects/social_post_bot/")
 
     # Get the text to post
     message = post_details["text"]

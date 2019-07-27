@@ -13,7 +13,7 @@ def getImageFromPixabay(image_id, sm_account):
     # Define the base url
     URL = f"https://pixabay.com/api/?key={API_KEY}&id={image_id}"
     # Move to directory
-    os.chdir("/home/bot/projects/abbie_social_post_bot/images")
+    os.chdir("/home/bot/projects/social_post_bot/images")
 
     def getPixabayURL(url, image_id):
         """Function to get the formatted url."""

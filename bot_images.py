@@ -44,7 +44,7 @@ def resizeImageForSocialMedia(image_id, sm_account):
 
     print(f"Resizing picture for {sm_account.upper()} to {resize_px} pixels.")
     # Define the filepath
-    image_file_path = r"/home/bot/projects/abbie_social_post_bot/images"
+    image_file_path = r"/home/bot/projects/social_post_bot/images"
 
     # Get all files
     file_list = os.listdir(image_file_path)
@@ -74,7 +74,7 @@ def resizeImageForSocialMedia(image_id, sm_account):
         else:
             print("Did not find the image.")
 
-    os.chdir(r"/home/bot/projects/abbie_social_post_bot")
+    os.chdir(r"/home/bot/projects/social_post_bot")
     print("Completed handling images.")
 
     return resize_prefix
@@ -83,7 +83,7 @@ def resizeImageForSocialMedia(image_id, sm_account):
 def deletePostedImage(image_prefix, image_id):
     """Deletes the resized image after it has been posted."""
     # Define the filepath
-    image_file_path = r"/home/bot/projects/abbie_social_post_bot/images"
+    image_file_path = r"/home/bot/projects/social_post_bot/images"
 
     # Get all files
     file_list = os.listdir(image_file_path)
@@ -102,4 +102,4 @@ def deletePostedImage(image_prefix, image_id):
             print("Did not find the image.")
 
     # Go back to directory
-    os.chdir(r"/home/bot/projects/abbie_social_post_bot")
+    os.chdir(r"/home/bot/projects/social_post_bot")

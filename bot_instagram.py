@@ -13,7 +13,7 @@ def postInstagram(image_prefix, post_details):
     post_lat = post_details["location_lat"]
     post_long = post_details["location_long"]
 
-    image_file_path = r"/home/bot/projects/abbie_social_post_bot/images"
+    image_file_path = r"/home/bot/projects/social_post_bot/images"
     # Get all files
     file_list = os.listdir(image_file_path)
     # Get the image to post
@@ -23,7 +23,7 @@ def postInstagram(image_prefix, post_details):
             os.chdir(image_file_path)
             post_image = i
             break
-        os.chdir(r"/home/bot/projects/abbie_social_post_bot")
+        os.chdir(r"/home/bot/projects/social_post_bot")
 
     with client(ig_username, ig_password) as cli:
         ig = cli.api()
