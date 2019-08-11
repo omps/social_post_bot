@@ -1,5 +1,6 @@
 """Module to interact with PIL and handle images."""
 
+from bot_pexels import getImageFromPexels
 from bot_pixabay import getImageFromPixabay
 from my_secrets import post_size_guide
 from PIL import Image
@@ -20,7 +21,7 @@ def saveImageToFolder(image_id, sm_account, post_details):
         # Pass for now
         pass
     elif "pexels.com/photo" in image_base_word:
-        # Pass for now
+        getImageFromPexels(image_id=post_details['image_link'], sm_account=sm_account)
         pass
 
 

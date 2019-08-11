@@ -60,29 +60,40 @@ def getPostDetails(sheet, sm_account):
         print("Completed Google Sheets data extraction.")
         for idx, row, in enumerate(values):
             row_number = idx+4
-            image_id = row[0]
             if sm_account == "ig":
-                already_posted_on_social_media = row[2]
-            elif sm_account == "tw":
-                already_posted_on_social_media = row[3]
-            elif sm_account == "fb":
                 already_posted_on_social_media = row[1]
+            elif sm_account == "tw":
+                already_posted_on_social_media = row[2]
+            elif sm_account == "fb":
+                already_posted_on_social_media = row[0]
             elif sm_account == "pt":
-                already_posted_on_social_media = row[4]
+                already_posted_on_social_media = row[3]
 
             # For images that were already posted 
             if already_posted_on_social_media == "Yes":
                 pass
             
             # For images that have not yet been posted
-            elif already_posted_on_social_media == "No" and image_id:
+            elif already_posted_on_social_media == "No" and row[9]:
                 post_details = {}
-                post_message = row[7]
-                character_length = row[12]
-                hashtags = row[9]
-                location = row[8]
-                image_link = row[10]
-
+                post_message = row[6]
+                character_length = row[11]
+                hashtags = row[8]
+                location = row[7]
+                image_link = row[9]
+                # Get the image id
+                if "pixabay.com/photos/" in image_link:
+                    image_id_str = image_link.split("pixabay.com/photos/")[-1]
+                    image_id = image_id_str.split("-")[-1]
+                    image_id = image_id.replace("/", "")
+                    print("Stripped image id {image_id} from the image link.")
+                if "pexels.com/photo/" in image_link:
+                    image_id_str = image_link.split("pexels.com/photo/")[-1]
+                    image_id = image_id_str.split("-")[-1]
+                    image_id = image_id.replace("/", "")
+                    print("Stripped image id {image_id} from the image link.")
+    
+    
                 # Get the coordinates
                 location_lat, location_long = get_location_coordinates(location=location)
 
@@ -105,10 +116,10 @@ def updateSheetsLog(sheet, service, update_image_id, sm_account):
     """Update Google Sheets after content has been posted."""
     # Define the columns related to each social media account
     sheets_social_media_columns = {
-        "tw": ["D", "E"],
-        "ig": ["C", "D"],
-        "fb": ["B", "C"],
-        "pt": ["E", "F"],
+        "tw": ["C", "D"],
+        "ig": ["B", "C"],
+        "fb": ["A", "B"],
+        "pt": ["D", "E"],
     }
 
     # Get the result
@@ -123,7 +134,17 @@ def updateSheetsLog(sheet, service, update_image_id, sm_account):
     else:
         for idx, row in enumerate(values):
             target_row = idx+4
-            check_image_id = row[0]
+            # Get the image id
+            if "pixabay.com/photos/" in row[9]:
+                check_image_id_str = row[9].split("pixabay.com/photos/")[-1]
+                check_image_id = check_image_id_str.split("-")[-1]
+                check_image_id = check_image_id.replace("/", "")
+                
+            elif "pexels.com/photo/" in row[9]:
+                check_image_id_str = row[9].split("pexels.com/photo/")[-1]
+                check_image_id = check_image_id_str.split("-")[-1]
+                check_image_id = check_image_id.replace("/", "")
+
             if str(update_image_id) == str(check_image_id):
                 UPDATE_RANGE_NAME = f"Main!{sheets_social_media_columns[sm_account][0]+str(target_row)}:{sheets_social_media_columns[sm_account][1]+str(target_row)}"
                 Body = {
